@@ -1,0 +1,48 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.propfirmdealfinder.twa'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.propfirmdealfinder.twa"
+        minSdk 19
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+
+        manifestPlaceholders = [
+            hostName: "propfirmdealfinder.com",
+            defaultUrl: "https://propfirmdealfinder.com",
+            launcherName: "Prop Firm Deals",
+            assetStatements: '[{ \"relation\": [\"delegate_permission/common.handle_all_urls\"], \"target\": { \"namespace\": \"web\", \"site\": \"https://propfirmdealfinder.com\" } }]'
+        ]
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("keystore.jks")
+            storePassword "pfdf2026store"
+            keyAlias "pfdf-key"
+            keyPassword "pfdf2026key"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
+}
