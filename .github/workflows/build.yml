@@ -23,6 +23,7 @@ jobs:
         run: |
           keytool -genkey -v \
             -keystore app/keystore.jks \
+            -storetype JKS \
             -keyalg RSA -keysize 2048 -validity 10000 \
             -alias pfdf-key \
             -storepass pfdf2026store \
