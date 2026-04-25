@@ -19,17 +19,6 @@ jobs:
         with:
           gradle-version: '8.5'
 
-      - name: Generate signing keystore
-        run: |
-          keytool -genkey -v \
-            -keystore app/keystore.jks \
-            -storetype JKS \
-            -keyalg RSA -keysize 2048 -validity 10000 \
-            -alias pfdf-key \
-            -storepass pfdf2026store \
-            -keypass pfdf2026key \
-            -dname "CN=Prop Firm Deal Finder, OU=Engineering, O=Prop Firm Deal Finder, L=San Jose, ST=California, C=US"
-
       - name: Create app icons
         run: |
           sudo apt-get install -y imagemagick
