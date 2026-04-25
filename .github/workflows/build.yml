@@ -16,6 +16,8 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
 
       - name: Generate signing keystore
         run: |
@@ -44,7 +46,7 @@ jobs:
           convert icon_512.png -resize 192x192 app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
 
       - name: Build release AAB
-        run: ./gradlew bundleRelease
+        run: gradle bundleRelease
 
       - name: Upload AAB artifact
         uses: actions/upload-artifact@v4
