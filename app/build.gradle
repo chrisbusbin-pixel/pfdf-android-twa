@@ -4,19 +4,19 @@ plugins {
 
 android {
     namespace 'com.propfirmdealfinder.twa'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.propfirmdealfinder.twa"
         minSdk 19
-        targetSdk 34
-        versionCode 1
-        versionName "1.0.0"
+        targetSdk 35
+        versionCode 2
+        versionName "1.1.0"
 
         manifestPlaceholders = [
             hostName: "propfirmdealfinder.com",
             defaultUrl: "https://propfirmdealfinder.com",
-            launcherName: "Prop Firm Deals",
+            launcherName: "Prop Firm Deal Finder",
             assetStatements: '[{ \"relation\": [\"delegate_permission/common.handle_all_urls\"], \"target\": { \"namespace\": \"web\", \"site\": \"https://propfirmdealfinder.com\" } }]'
         ]
     }
@@ -44,5 +44,5 @@ android {
 }
 
 dependencies {
-    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.6.0'
 }
